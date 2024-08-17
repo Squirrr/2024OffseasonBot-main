@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
-import frc.robot.Constants.ArmConstants;
+import frc.robot.Constants9752.ArmConstants;
 import frc.robot.commands.AutoPivotAndShoot;
 import frc.robot.commands.DriveCommands;
 import frc.robot.commands.ShootCommand;
@@ -53,7 +53,7 @@ public class RobotContainer {
 
   public RobotContainer() {
 
-    switch (Constants.currentMode) {
+    switch (Constants9752.currentMode) {
       case REAL:
         drive =
             new Drive(

@@ -13,11 +13,12 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 import dev.doglog.DogLog;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.ArmConstants;
+import frc.robot.RobotConfig;
+import frc.robot.Constants9752.ArmConstants;
 
 public class ArmSubsystem extends SubsystemBase {
   /** Creates a new ArmSubsystem. */
-  public static final TalonFX armMotor = new TalonFX(ArmConstants.kArmMotorPort, "static");
+  public static final TalonFX armMotor = new TalonFX(RobotConfig.botConstants.ArmConstants.kArmMotorPort, "static");
 
   TalonFXConfiguration armConfigs = new TalonFXConfiguration();
   Slot0Configs slot0Configs = armConfigs.Slot0;

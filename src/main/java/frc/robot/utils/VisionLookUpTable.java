@@ -4,7 +4,7 @@
 
 package frc.robot.utils;
 
-import frc.robot.Constants;
+import frc.robot.Constants9752;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class VisionLookUpTable {
   }
 
   public VisionLookUpTable() {
-    shooterConfig = Constants.getLookupTable();
+    shooterConfig = Constants9752.getLookupTable();
     Collections.sort(shooterConfig.getShooterConfigs());
   }
 

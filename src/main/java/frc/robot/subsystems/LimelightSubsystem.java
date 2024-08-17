@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
+import frc.robot.Constants9752;
 import frc.robot.utils.LimelightHelpers;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,9 +27,9 @@ public class LimelightSubsystem extends SubsystemBase {
 
   private void initializeDistanceMap() {
     if (isRedMap()) {
-      distanceMap = Constants.LimelightConstants.Red.getRedDistanceMap();
+      distanceMap = Constants9752.LimelightConstants.Red.getRedDistanceMap();
     } else { // its a blue map by default
-      distanceMap = Constants.LimelightConstants.Blue.getBlueDistanceMap();
+      distanceMap = Constants9752.LimelightConstants.Blue.getBlueDistanceMap();
     }
   }
 
@@ -54,7 +54,7 @@ public class LimelightSubsystem extends SubsystemBase {
       targetSeenTimer.restart();
       ty = LimelightHelpers.getTY("limelight");
       detectedTargetDistance =
-          getDistanceFromTy(ty) - Constants.LimelightConstants.cameraToSpeakerDistance;
+          getDistanceFromTy(ty) - Constants9752.LimelightConstants.cameraToSpeakerDistance;
     } else if (targetSeenTimer.get() > 0.1) {
       detectedTargetDistance = -1;
     }
@@ -67,20 +67,20 @@ public class LimelightSubsystem extends SubsystemBase {
     if (distanceMap.isEmpty()) {
       return -1;
     }
-    if (ty < Constants.LimelightConstants.Red.LOWEST_TY
-        || ty < Constants.LimelightConstants.Blue.LOWEST_TY) {
+    if (ty < Constants9752.LimelightConstants.Red.LOWEST_TY
+        || ty < Constants9752.LimelightConstants.Blue.LOWEST_TY) {
       if (isRedMap()) {
-        return Constants.LimelightConstants.Red.LOWEST_DISTANCE;
+        return Constants9752.LimelightConstants.Red.LOWEST_DISTANCE;
       } else {
-        return Constants.LimelightConstants.Blue.LOWEST_DISTANCE;
+        return Constants9752.LimelightConstants.Blue.LOWEST_DISTANCE;
       }
 
-    } else if (ty > Constants.LimelightConstants.Red.HIGHEST_TY
-        || ty > Constants.LimelightConstants.Blue.HIGHEST_TY) {
+    } else if (ty > Constants9752.LimelightConstants.Red.HIGHEST_TY
+        || ty > Constants9752.LimelightConstants.Blue.HIGHEST_TY) {
       if (isRedMap()) {
-        return Constants.LimelightConstants.Red.HIGHEST_DISTANCE;
+        return Constants9752.LimelightConstants.Red.HIGHEST_DISTANCE;
       } else {
-        return Constants.LimelightConstants.Blue.HIGHEST_DISTANCE;
+        return Constants9752.LimelightConstants.Blue.HIGHEST_DISTANCE;
       }
     }
 
@@ -115,15 +115,15 @@ public class LimelightSubsystem extends SubsystemBase {
 
   public double setLimelightArmPos() {
     double distance =
-        (Constants.LimelightConstants.heightToAprilTag
+        (Constants9752.LimelightConstants.heightToAprilTag
                 / Math.tan(Math.toRadians(LimelightHelpers.getTY("limelight")) + 10))
             + 10;
 
     double lAngle =
         Math.toDegrees(
             Math.atan(
-                (Constants.LimelightConstants.heightToAprilTag
-                        + Constants.LimelightConstants.aprilTagToSpeakerHeight)
+                (Constants9752.LimelightConstants.heightToAprilTag
+                        + Constants9752.LimelightConstants.aprilTagToSpeakerHeight)
                     / distance));
 
     double armAngle = 70 - lAngle;

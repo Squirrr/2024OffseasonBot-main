@@ -13,15 +13,15 @@ import dev.doglog.DogLog;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
-import frc.robot.Constants.ArmConstants;
+import frc.robot.Constants9752;
+import frc.robot.Constants9752.ArmConstants;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.utils.LimelightHelpers;
 
 /** Add your docs here. */
 public class LEDSubsystem extends SubsystemBase {
-  public static final CANdle candle = new CANdle(Constants.CANdleConstants.CANdleID, "static");
+  public static final CANdle candle = new CANdle(Constants9752.CANdleConstants.CANdleID, "static");
   public static double currentArmPos, targetedDist, intakeState;
   public static boolean limelightTargeted, idle;
   StrobeAnimation strobeIntake = new StrobeAnimation(0, 255, 0, 0, .7, 999);

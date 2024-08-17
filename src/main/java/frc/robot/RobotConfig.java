@@ -14,7 +14,7 @@ public class RobotConfig {
     String ITKAN9752SERIAL2024 = "PUTSERIALHERE";
     public static RobotType robotType = null;
 
-    public static Constants constants;
+    public static Constants botConstants;
     
     public RobotConfig() {
         if (Robot.isReal()) {
@@ -30,9 +30,9 @@ public class RobotConfig {
         if (Robot.isSimulation()) {
             robotType = RobotType.SIM;
         }if (rioSerial==ITKAN9128SERIAL2024) {
-            constants = new Constants9752();
+            botConstants = new Constants9128();
         } else if (rioSerial==ITKAN9752SERIAL2024) {
-            constants = new Constants9752();
+            botConstants = new Constants9752();
         } else {
             System.out.println("No valid serial found");
         }

@@ -5,7 +5,7 @@
 package frc.robot.utils;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.Constants;
+import frc.robot.Constants9752;
 
 /**
  * Class for a tunable number. Gets value from dashboard in tuning mode, returns default if not or
@@ -47,7 +47,7 @@ public class TunableNumber {
     if (!m_hasDefault) {
       m_hasDefault = true;
       this.m_defaultValue = defaultValue;
-      if (Constants.ControllerConstants.kIsTuningMode) {
+      if (Constants9752.ControllerConstants.kIsTuningMode) {
         SmartDashboard.putNumber(m_key, SmartDashboard.getNumber(m_key, defaultValue));
       }
     }
@@ -67,7 +67,7 @@ public class TunableNumber {
    * next cycle.
    */
   public void set(double value) {
-    if (Constants.ControllerConstants.kIsTuningMode) {
+    if (Constants9752.ControllerConstants.kIsTuningMode) {
       SmartDashboard.putNumber(m_key, value);
     } else {
       m_defaultValue = value;
@@ -83,7 +83,7 @@ public class TunableNumber {
     if (!m_hasDefault) {
       return 0.0;
     } else {
-      return Constants.ControllerConstants.kIsTuningMode
+      return Constants9752.ControllerConstants.kIsTuningMode
           ? SmartDashboard.getNumber(m_key, m_defaultValue)
           : m_defaultValue;
     }

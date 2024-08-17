@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
-import frc.robot.Constants;
+import frc.robot.Constants9752;
 import frc.robot.subsystems.drive.Drive;
 import java.util.function.DoubleSupplier;
 
@@ -48,8 +48,8 @@ public class DriveCommands {
           double omega = 0;
 
           if (Math.abs(xOmega) + Math.abs(yOmega) > 0.1) {
-            m_thetaController.setP(Constants.SwerveConstants.driveHeadingKp);
-            m_thetaController.setD(Constants.SwerveConstants.driveHeadingKd);
+            m_thetaController.setP(Constants9752.SwerveConstants.driveHeadingKp);
+            m_thetaController.setD(Constants9752.SwerveConstants.driveHeadingKd);
             m_thetaController.setSetpoint(Math.toDegrees(Math.atan2(xOmega, yOmega)));
             omega =
                 m_thetaController.calculate(
